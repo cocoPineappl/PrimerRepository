@@ -1,13 +1,16 @@
-# Procesos de calculadora basica
+# comment
+# Calculadora de funciones multiples 'CG'
+#  archivo Main.pay    menu de General Option 
+#
 # 
-# 
-
+#  Creado el: 26/05/2025    @Author coconutPineappl
+# îî  version: 1.0.0  îî
+#  Procesos de calculadora basica
 # IHR 22 de mayo 2025
-# calcukadora - main.py
+# calculadora - main.py
 # 
 
-import math #muestra el menu principal del programa
-import time #para el delay
+import math # importamos op matematicas
 from delay_general import *
 
 def mostrar_menu():
@@ -28,21 +31,13 @@ def obtener_numeros(operacion):
         entrada = input(f"\nIngresa numeros separados por espacios para {operacion} (Enter para terminar): ").strip()
         if entrada == "":
             return []
-        
-        numeros = []
-        error = False
+        try:
+            return list(map(float, entrada.split()))
+        except ValueError:
+            print("Error: Uno o más valores no son números. Intenta de nuevo.")
+        #upgrade 1.0.0 > 1.0.1 29/Marzo.25
+        #upgrade 1.0.1 > 1.0.2 29/Marzo.25
 
-        for valor in entrada.split():
-            try:
-                numero = float(valor)
-                numeros.append(numero)
-            except ValueError:
-                print(f"Error: '{valor}' no es un numero. Intenta de nuevo.")
-                error = True
-                break
-        
-        if not error:
-            return numeros
         
 def realizar_operacion_basica(opcion, simbolo):
     numeros = obtener_numeros(simbolo)

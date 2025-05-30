@@ -1,6 +1,13 @@
-# PANTALLA DE CARGA
-# Saliendo del programa
+# comment
+# Delay en forma de mensaje, simula una pantalla de carga
+# archivo delay_general.pay    - delay predeterminado
 # 
+#  
+# Creado el: 27/05/2025    @Author coconutPineappl
+# îî  version: 1.0.0  îî
+#  PANTALLA DE CARGA
+# Saliendo del programa
+
 import time
 def loadScreen(texto, delay_ms=200):
     #

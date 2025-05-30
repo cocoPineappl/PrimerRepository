@@ -1,6 +1,13 @@
-# Calculadora de distamcias
-# Util para medir guardar medidas y consultar historial
+# comment
+# Calculadora de funciones multiples 'CG'
+# archivo Main.pay    menu de General Option 
 # 
+#  
+# 
+# Creado el: 26/05/2025    @Author coconutPineappl
+# îî  version: 1.0.0  îî
+#  Calculadora de distancias mm, cm, m, km
+# Util para medir guardar medidas y consultar historial
 
 import re
 from typing import List, Tuple
