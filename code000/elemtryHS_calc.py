@@ -3,11 +3,11 @@
 #  archivo Main.pay    menu de General Option 
 #
 # 
-#  Creado el: 26/05/2025    @Author coconutPineappl
+#  Creado el: 22/05/2025    @Author coconutPineappl
 # îî  version: 1.0.0  îî
 #  Procesos de calculadora basica
 # IHR 22 de mayo 2025
-# calculadora - main.py
+# calculadora - Main.py
 # 
 
 import math # importamos op matematicas
@@ -35,18 +35,18 @@ def obtener_numeros(operacion):
             return list(map(float, entrada.split()))
         except ValueError:
             print("Error: Uno o más valores no son números. Intenta de nuevo.")
-        #upgrade 1.0.0 > 1.0.1 29/Marzo.25
-        #upgrade 1.0.1 > 1.0.2 29/Marzo.25
-
+    
+    #upgrade 1.0.0 > 1.0.1 29/Marzo.25
+    #upgrade 1.0.2 30/Marzo.25
         
 def realizar_operacion_basica(opcion, simbolo):
     numeros = obtener_numeros(simbolo)
     if not numeros:
         print("No se ingresaron numeros.")
         return None
-    
+    #map para convertir entrada float y reducir codigo *30/05
+    expresion = f" {simbolo} ".join(map(str, numeros))
     resultado = numeros[0]
-    expresion = str(resultado)
 
     for num in numeros[1:]:
         if opcion == 1:  # Suma
@@ -59,13 +59,12 @@ def realizar_operacion_basica(opcion, simbolo):
             if num == 0:
                 print("No puedes dividir entre cero.  Indeterminado.")
                 return None
-            resultado /= num
-        
-        expresion += f" {simbolo} {num}"
-    
+            resultado /= num            
     print(f"\nOperación: {expresion}")
-    print(f"Resultado: {resultado}")
+    print(f"\nResultado: {resultado}")
     return resultado
+
+    #upgrade 1.0.2 30/Marzo.25
 
 def realizar_operacion_avanzada(opcion):
     #Maneja raíces y potencias con validación de errores.
@@ -79,7 +78,6 @@ def realizar_operacion_avanzada(opcion):
                 resultado = math.sqrt(num)
                 print(f"√{num} = {resultado}")
                 return resultado
-            
             elif opcion == 6:  # Potencia
                 base = float(input("\nIngresa la base: "))
                 exponente = float(input("Ingresa el exponente: "))
@@ -92,6 +90,7 @@ def realizar_operacion_avanzada(opcion):
         
         except ValueError:
             print("Error: Ingresa un número válido.")
+    #no changes *30/05
 
 def menu_secundario():
     #menu seleccion de operacion 
@@ -109,6 +108,7 @@ def menu_secundario():
 
 def start_calculadora():
     """Controla el flujo principal de la calculadora."""
+    simbolos = {1: "+", 2: "-", 3: "*", 4: "/"}
     while True:
         mostrar_menu()
         opcion = input("\nSelecciona una operación (1-7): ")
@@ -151,5 +151,5 @@ def start_calculadora():
                 loadScreen(" Regresando al Menu Principal . . . ", 50)
                 print("\n")  # Espacio final
                 return  # Salir del programa
-
-
+            
+    #upgrade 1.0.2 30/Marzo.25

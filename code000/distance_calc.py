@@ -1,14 +1,13 @@
-# comment
-# Calculadora de funciones multiples 'CG'
-# archivo Main.pay    menu de General Option 
-# 
-#  
-# 
-# Creado el: 26/05/2025    @Author coconutPineappl
-# îî  version: 1.0.0  îî
-#  Calculadora de distancias mm, cm, m, km
-# Util para medir guardar medidas y consultar historial
-
+# || comment
+# || Calculadora de funciones multiples 'CG'
+# || archivo Main.pay    menu de General Option 
+# || 
+# ||  
+# || Creado el: 26/05/2025    @Author coconutPineappl
+# || îî  version: 1.0.0  îî
+# ||  Calculadora de distancias mm, cm, m, km
+# || Util para medir guardar medidas y consultar historial
+# ||
 import re
 from typing import List, Tuple
 from delay_general import *
@@ -22,7 +21,11 @@ Unidades = {
 }
 
 def convertir_a_metros(valor:float, unidad:str) -> float:
-    return valor * Unidades.get(unidad, 1.0)
+    if unidad not in Unidades:
+        raise ValueError(f"Unidad desconocida: {unidad}")
+    return valor * Unidades[unidad]
+
+    #upgrade 1.0.2 30/Marzo.25
 
 def parsear_entrada(entrada:str) -> List[Tuple[float,str]]:
     patron= r'([\d.]+)\s*([a-zA-Z]+)'
@@ -32,19 +35,16 @@ def calcular_distancia(entrada:str, historial:List[str]) -> Tuple[float,str]:
     valores_unidades = parsear_entrada(entrada)
     if not valores_unidades:
         raise ValueError("Formato invalido. Ejemplo:  '5cm + 10mm' ")
-    
-    total_metros= 0.0
-    expresion =[]
-
-    for valor, unidad in valores_unidades:
-        total_metros += convertir_a_metros(valor, unidad)
-        expresion.append(f"{valor} {unidad}")
-    
-    expresion_str = " + ".join(expresion)
-    resultado = f"{expresion_str} {total_metros} m"
+    total_metros = sum(convertir_a_metros(valor, unidad) for valor, unidad in valores_unidades)
+    expresion = " + ".join(f"{valor} {unidad}" for valor, unidad in valores_unidades)
+    resultado = f"{expresion} = {total_metros} m"
     historial.append(resultado)
+    if len(historial) > 10:
+        historial.pop(0)
 
     return total_metros, resultado
+
+    #upgrade 1.0.2 30/Marzo.25 
 
 def mostrar_historial(historial:List[str]):
     print("\n- - - - HISTORIAL - - - -")
