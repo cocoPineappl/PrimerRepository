@@ -1,15 +1,14 @@
 # comment
 # Calculadora de funciones multiples 'CG'
 # archivo Main.pay    menu de General Option 
-#
 # 
-#  
-# 
-# Creado el: 26/05/2025    @Author coconutPineappl
+#  Creado el: 22/05/2025    @Author coconutPineappl
 # îî  version: 1.0.0  îî
+#  Procesos de calculadora basica
+# IHR 22 de mayo 2025
+# calculadora - Main.py
+# 
 
-
-#import time
 from delay_general import *
 from elemtryHS_calc import start_calculadora #importando calculadora basica
 from distance_calc import start_Distancia #importando calculadora avanzada (distancias)
@@ -35,7 +34,7 @@ def main():
             loadScreen(". . . Cargando CDistancia . . .", 50)
             start_Distancia() #Llamamos a la calculadora de distancias
         elif opcion == "3":
-            loadScreen(". . . Cargando opcion3 . . .", 50)
+            loadScreen(". . . Cargando opcion 3 . . .", 50)
         elif opcion == "0": #nuevo: Funcion salir == 0
             print("\n")  # Espacio antes del mensaje
             loadScreen(". . . Saliendo del programa . . .", 50)

@@ -1,7 +1,6 @@
 # comment
 # Calculadora de funciones multiples 'CG'
-#  archivo Main.pay    menu de General Option 
-#
+# archivo Main.pay    menu de General Option 
 # 
 #  Creado el: 22/05/2025    @Author coconutPineappl
 # îî  version: 1.0.0  îî
