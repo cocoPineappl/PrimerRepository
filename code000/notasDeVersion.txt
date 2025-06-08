@@ -1,0 +1,16 @@
+#comment
+#
+nota: Este documento debio de hacerse desde el dia uno del projecto. punto negaivo para el Dev.
+nota 2: este TXT esta destinado para describir las correcciones del codigo. 
+
+
+            -- VERSION 1.0.4 --
+
+1- Modificamos las opciones de salida de menu y del programa en general con '0', facilitando la salida y predefiniendo
+dicho numero.
+
+2- Modificamos los siguientes archivos:
+    elemtryHS.py
+    distance_calc.py
+Para que el numero '0' sea predefinido para las salidas de programa.
+

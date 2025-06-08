@@ -86,16 +86,17 @@ def mostrar_historial(historial:List[str]):
 def menu_sec_distancia():
     print("\n¿Qué deseas hacer ahora?")
     print("1. Realizar otra operación")
-    print("2. Volver al menú principal")
-    print("3. Salir")
-    print("4. Ver historial")
+    print("2. Ver historial")
+    print("3. Menu Principal")
+    print("0. Salir del programa")
 
     while True:
-        opcion = input("Selecciona una opción (1-4): ")
-        if opcion in {"1", "2", "3", "4"}:
+        opcion = input("Selecciona una opción (0-3): ")
+        if opcion in {"0", "1", "2", "3"}:
             return int(opcion)
-        print("Error: Ingresa un número entre 1 y 4.")
+        print("Error: Ingresa un número entre 0 y 3.")
     #upgrade 1.0.3 30/Marzo.25
+    #upgrade 1.0.4 07/Junio.25
 
 def start_Distancia():
     historial = []
@@ -116,8 +117,22 @@ def start_Distancia():
         try:
             _, resultado = calcular_distancia(entrada, historial)
             print(f"\nResultado: {resultado}")
+            
+            while True:
+                opcion = menu_sec_distancia()
+                if opcion == 1:
+                    break #repetir operacion
+                elif opcion == 2:
+                    mostrar_historial(historial)
+                elif opcion == 3:
+                    print("\n")  # Espacio antes del mensaje
+                    loadScreen(" Regresando al Menu Principal . . . ", 50)
+                elif opcion == 0:
+                    print("\n")
+                    loadScreen(" Regresando al Menu Principal . . . ", 50)
         except ValueError as e:
             print(f"Error: {e}")
+    #upgrade 1.0.4 07/Junio.25
 
 if __name__ == "__main__":
     start_Distancia()
