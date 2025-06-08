@@ -7,7 +7,7 @@
 #  Procesos de calculadora basica
 # IHR 22 de mayo 2025
 # calculadora - Main.py
-# 
+# si
 
 from delay_general import *
 from elemtryHS_calc import start_calculadora #importando calculadora basica
@@ -47,4 +47,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
