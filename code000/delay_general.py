@@ -1,5 +1,5 @@
 # comment
-# Delay en forma de mensaje, simula una pantalla de carga
+# Delay en forma de mensaje, simula un tiempo de carga
 # archivo delay_general.pay    - delay predeterminado   
 #  
 # Creado el: 27/05/2025    @Author coconutPineappl

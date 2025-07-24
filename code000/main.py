@@ -3,7 +3,7 @@
 # archivo Main.pay    menu de General Option 
 # 
 #  Creado el: 22/05/2025    @Author coconutPineappl
-# îî  version: 1.0.0  îî
+#  îî  version: 1.0.0  îî
 #  Procesos de calculadora basica
 # IHR 22 de mayo 2025
 # calculadora - Main.py

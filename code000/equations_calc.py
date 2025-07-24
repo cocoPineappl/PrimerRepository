@@ -6,7 +6,6 @@
 #  ecuaciones varias (lineal, cuadratica). Suma y resta de matricas (2x2, 3x3)
 # IHR 22 de mayo 2025
 # 
-
 # advanced_calc.py
 import numpy as np
 from delay_general import *
